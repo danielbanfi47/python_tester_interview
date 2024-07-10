@@ -1,4 +1,5 @@
 import logging
+import sys
 
 
 class MessageManipulator:
@@ -8,7 +9,7 @@ class MessageManipulator:
             format="%(asctime)s [%(levelname)s] %(message)s",
             handlers=[
                 logging.FileHandler("debug.log"),
-                logging.StreamHandler()
+                logging.StreamHandler(sys.stdout)
             ]
         )
         self.message = message
